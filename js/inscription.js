@@ -15,11 +15,11 @@ if (!raceId) {
     // et le formulaire
 } else {
 
-    fetch("data/races.json")
+    fetch("http://localhost:8888/courir/api?race="+raceId)
         .then(response => response.json())
         .then(data => {
 
-            const race = data.find(race => race.id == raceId);
+            const race = data
             console.log(race)
 
             if (!race?.name) { // es ce que race à un nom ???
