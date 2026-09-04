@@ -6,8 +6,7 @@ const raceList = document.querySelector('#race-list');
  */
 const fetchCourses = async () => {
   try {
-    const resp = await fetch('./data/races.json');
-
+    const resp = await fetch('http://localhost:8888/courir/api');
     if (resp.ok) {
       const data = await resp.json();
       refreshCourses(data);
